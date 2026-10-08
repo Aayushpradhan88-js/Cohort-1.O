@@ -11,12 +11,11 @@
 
 //Types of example : Simple function
 function greet(name) {
-    // return name
     console.log("Hello", name)
 }
 
-// const output = greet("Naresh")
-// console.log(output)
+greet("Naresh")
+
 
 // greet("Samikshya") //function calling
 
@@ -42,8 +41,49 @@ function greet(name) {
 // function process --> check the typeof value --> check the email and password using && operator
 
 // TASK: check the type of email also like @ is available or not also check is there is empty value or not
+
 //Task
 /*
     - Read about arrow function, callback function, how can we cull another function, Clousers, HOF, Async fnx. 
     - Employee Salary calculation, Ecommerce Order Calculator (code)
 */
+
+//Login function
+
+//input values = email, password
+
+function login(email, password) {
+    //logic 1st type checking --> email formating checking  --> check uservalues(local values) --> return 
+
+    //1st type checking
+    if(typeof email !== "string"){
+        return "Email must be string";
+    }
+    if(typeof password !== "string"){
+        return "Password must be string";
+    }
+
+    //2nd Email formating
+    if(!email.includes("@")){ //shankahr123
+        return "Please enter the valid email";
+    }
+
+    //3rd check 
+    if(email.trim() === "" || password.trim() === ""){
+        return "The email or password you entered isn’t connected to an account."
+    }
+
+    //4th check values
+    if(email === "admin@gmail.com" && password === "admin1234") {
+        return "Login successful"
+    }
+    return "Invalid credientals check email or password";
+}
+
+//users
+console.log(login("admin@gmail.com", "admin1234")) //login success
+console.log(login("admin@gmail.com", "admin12345"))
+console.log(login("admin@gmail.com", "admin12346"))
+console.log(login("admin@gmail.com", "admin12347  "))
+console.log(login(12345, " admin12348 "))
+console.log(login("admin123", " admin12348 "))
