@@ -15,9 +15,9 @@
 //data
 
 const products = [
-    {name: "laptop", price: 80000}, //i 0
-    {name: "monitor", price: 12000}, //i:1
-    {name: "mouse", price: 1000}     //i:2
+    { name: "laptop", price: 80000 }, //i 0
+    { name: "monitor", price: 12000 }, //i:1
+    { name: "mouse", price: 1000 }     //i:2
 ];
 
 // console.log(products)
@@ -26,7 +26,7 @@ console.log("output", productName)
 
 //Task2: Calclate discount  (price, discount)
 const totalPrice = (p1, p2) => {
-    return p1 * (1 - p2/100);
+    return p1 * (1 - p2 / 100);
 }
 
 console.log(totalPrice(3000, 10))
@@ -44,14 +44,15 @@ function main(name, shankhar, aayush) {
 }
 
 //component
-function comp(){
+function comp() {
     console.log("Welcome!")
 }
 
-function comp2(){
+function comp2() {
     console.log("shankhar")
 }
 
 main("Naren sir", comp, comp2)
+
 
 //TASK: Payment processsing - account number, price
