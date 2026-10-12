@@ -5,7 +5,7 @@
 //ASYNC Function
 // sync ra async difference
 
-//sync: 
+//sync:
 //async:
 
-//task: async/sync research, promises, callback hell, flow of apicalls.
+//task: async/sync ,flow of apicalls., promises, callback hell
