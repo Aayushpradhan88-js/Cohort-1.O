@@ -66,22 +66,7 @@ console.log
 //API CALLS USING ASYNC/AWAIT 
 //FAKE REF: https://jsonplaceholder.typicode.com/
 
-async function getSpecificUserPost() {
-    try {
-        const response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
-        console.log(response)
-        console.log(response.status)
-        console.log(response.json)
-    
-        if (!response.ok) throw new Error("Failed to fetch")
-        const posts = await response.json()
-        console.log(posts)
-    } catch (error) {
-        // console.log(error.message)
-        throw new Error("Failed to fetch")
-    }
-}
-getSpecificUserPost()
+
 
 //task : in different functions we have to get the data of (GET, PUT, PATCH, DELETE, POST) & edge cases are handled gracefully...
 
