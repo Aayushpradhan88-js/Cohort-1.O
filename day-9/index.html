@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f4ef">
+    <meta name="description" content="A quiet little counter for keeping track of what matters.">
+    <title>Counter — A little progress, counted</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="page">
+        <header class="topbar">
+            <a class="wordmark" href="#" aria-label="Counter home">
+                <span class="wordmark-icon" aria-hidden="true">c.</span>
+                <span>little tally</span>
+            </a>
+            <span class="topbar-note"><span class="status-dot" aria-hidden="true"></span> A moment for yourself</span>
+        </header>
+
+        <section class="counter-card" aria-labelledby="page-title">
+            <div class="card-topline">
+                <span class="eyebrow">YOUR PERSONAL COUNTER</span>
+                <span class="counter-mark" aria-hidden="true">✳</span>
+            </div>
+
+            <div class="intro">
+                <p class="overline">ONE STEP AT A TIME</p>
+                <h1 id="page-title">A little progress,<br><em>counted.</em></h1>
+                <p class="description">Keep track of the small things. They add up.</p>
+            </div>
+
+            <div class="count-panel">
+                <span class="count-label">CURRENT COUNT</span>
+                <output class="count-value" id="count" aria-live="polite" aria-atomic="true">0</output>
+                <span class="count-caption" id="count-caption">A fresh start.</span>
+            </div>
+
+            <div class="controls" aria-label="Counter controls">
+                <button class="button button-primary" id="increase" type="button">
+                    <span class="button-symbol" aria-hidden="true">+</span>
+                    <span>Increase</span>
+                </button>
+                <button class="button button-secondary" id="decrease" type="button">
+                    <span class="button-symbol" aria-hidden="true">−</span>
+                    <span>Decrease</span>
+                </button>
+            </div>
+
+            <button class="reset-button" id="reset" type="button">
+                <span aria-hidden="true">↺</span> Start over
+            </button>
+
+            <div class="card-footer">
+                <span>MADE FOR THE LITTLE WINS</span>
+                <span class="footer-flower" aria-hidden="true">✳</span>
+                <span>TAKE IT AT YOUR PACE</span>
+            </div>
+        </section>
+
+        <footer class="page-footer">
+            <span>ONE MOMENT. ONE COUNT.</span>
+            <span>© <span id="year"></span> LITTLE TALLY</span>
+        </footer>
+    </main>
+</body>
+</html>

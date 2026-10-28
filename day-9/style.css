@@ -1,0 +1,363 @@
+:root {
+    color-scheme: light;
+    --paper: #f5f4ef;
+    --card: #fffefa;
+    --ink: #242a25;
+    --muted: #898d82;
+    --line: #e8e7df;
+    --green: #52674f;
+    --green-dark: #40533e;
+    --serif: "Instrument Serif", Georgia, serif;
+    --sans: "DM Sans", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    background:
+        radial-gradient(ellipse at 50% 44%, rgba(231, 231, 219, 0.48), transparent 49%),
+        var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    font: inherit;
+}
+
+.page {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    padding: 28px 6.25vw 22px;
+}
+
+.topbar,
+.page-footer {
+    display: flex;
+    width: 100%;
+    max-width: 1220px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wordmark {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    text-decoration: none;
+}
+
+.wordmark-icon {
+    display: grid;
+    width: 28px;
+    height: 28px;
+    place-items: center;
+    border: 1px solid #d5d8ce;
+    border-radius: 50%;
+    color: var(--green);
+    font-family: var(--serif);
+    font-size: 17px;
+}
+
+.topbar-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #777d73;
+    font-size: 11px;
+    letter-spacing: 0.015em;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #89a47e;
+    box-shadow: 0 0 0 3px rgba(137, 164, 126, 0.14);
+}
+
+.counter-card {
+    position: relative;
+    display: flex;
+    width: min(100%, 560px);
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 34px 0;
+    padding: 38px 56px 27px;
+    overflow: hidden;
+    border: 1px solid rgba(226, 225, 216, 0.9);
+    border-radius: 3px;
+    background: var(--card);
+    box-shadow: 0 24px 70px rgba(49, 53, 42, 0.055), 0 2px 8px rgba(49, 53, 42, 0.025);
+    text-align: center;
+}
+
+.card-topline {
+    position: absolute;
+    top: 26px;
+    right: 30px;
+    left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.eyebrow,
+.overline,
+.count-label,
+.card-footer,
+.page-footer {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+}
+
+.eyebrow {
+    color: #9a9c92;
+}
+
+.counter-mark {
+    color: #a4ae98;
+    font-size: 16px;
+}
+
+.intro {
+    margin-top: 21px;
+}
+
+.overline {
+    margin: 0 0 13px;
+    color: var(--green);
+}
+
+h1 {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(47px, 7vw, 66px);
+    font-weight: 400;
+    letter-spacing: -0.045em;
+    line-height: 0.98;
+}
+
+h1 em {
+    color: var(--green);
+    font-weight: 400;
+}
+
+.description {
+    margin: 17px 0 0;
+    color: #85877f;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.count-panel {
+    display: flex;
+    width: min(100%, 340px);
+    min-height: 158px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 36px 0 25px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background:
+        linear-gradient(135deg, rgba(247, 247, 241, 0.72), rgba(255, 254, 250, 0.7));
+}
+
+.count-label {
+    margin-bottom: 5px;
+    color: #9b9d93;
+    font-size: 8px;
+}
+
+.count-value {
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 70px;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.04em;
+    line-height: 1.04;
+}
+
+.count-caption {
+    min-height: 14px;
+    margin-top: 3px;
+    color: #85877f;
+    font-size: 10px;
+}
+
+.controls {
+    display: grid;
+    width: min(100%, 340px);
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.button {
+    display: inline-flex;
+    min-height: 47px;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 500;
+    transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.button:active {
+    transform: translateY(1px);
+}
+
+.button:focus-visible,
+.reset-button:focus-visible,
+.wordmark:focus-visible {
+    outline: 2px solid #879a7c;
+    outline-offset: 4px;
+}
+
+.button-primary {
+    background: var(--green);
+    color: #fffefa;
+}
+
+.button-primary:hover {
+    background: var(--green-dark);
+}
+
+.button-secondary {
+    border-color: #dedfd6;
+    background: transparent;
+    color: #555b52;
+}
+
+.button-secondary:hover {
+    border-color: #aeb8a6;
+    background: #f7f8f3;
+}
+
+.button-symbol {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.reset-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin: 17px 0 26px;
+    padding: 5px 8px;
+    border: 0;
+    background: none;
+    color: #888b81;
+    cursor: pointer;
+    font-size: 10px;
+    transition: color 160ms ease;
+}
+
+.reset-button:hover {
+    color: var(--green-dark);
+}
+
+.reset-button span {
+    font-size: 14px;
+}
+
+.card-footer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 17px;
+    border-top: 1px solid #efeee8;
+    color: #a1a297;
+    font-size: 7px;
+    letter-spacing: 0.11em;
+}
+
+.footer-flower {
+    color: #95a18a;
+    font-size: 13px;
+}
+
+.page-footer {
+    color: #a0a196;
+    font-size: 8px;
+    letter-spacing: 0.11em;
+}
+
+@media (min-height: 860px) {
+    .counter-card {
+        margin-top: 54px;
+        margin-bottom: 54px;
+    }
+}
+
+@media (max-width: 520px) {
+    .page {
+        padding: 20px 18px 17px;
+    }
+
+    .topbar-note {
+        font-size: 10px;
+    }
+
+    .counter-card {
+        margin: 25px 0;
+        padding: 34px 25px 22px;
+    }
+
+    .card-topline {
+        top: 21px;
+        right: 22px;
+        left: 22px;
+    }
+
+    .intro {
+        margin-top: 24px;
+    }
+
+    .count-panel {
+        min-height: 145px;
+        margin-top: 30px;
+    }
+
+    .card-footer {
+        font-size: 6px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
