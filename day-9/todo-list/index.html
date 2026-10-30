@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#191919">
+    <title>Inbox - Daylist</title>
+    <link rel="preconnect" href="https://api.fontshare.com">
+    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar" aria-label="Main navigation">
+            <a class="brand" href="#" aria-label="Daylist home">
+                <span class="brand-mark" aria-hidden="true">d</span>
+                <span>daylist</span>
+            </a>
+
+            <button class="add-task-button" id="open-create" type="button">
+                <span class="plus-icon" aria-hidden="true">+</span>
+                <span>Add task</span>
+            </button>
+
+            <label class="search-box">
+                <span aria-hidden="true">⌕</span>
+                <input id="search-input" type="search" placeholder="Search" aria-label="Search tasks">
+                <kbd>/</kbd>
+            </label>
+
+            <nav class="primary-nav" aria-label="Task views">
+                <button class="nav-item active" type="button" data-view="inbox">
+                    <span class="nav-icon" aria-hidden="true">▣</span>
+                    <span>Inbox</span>
+                    <span class="nav-count" id="inbox-count">0</span>
+                </button>
+                <button class="nav-item" type="button" data-view="today">
+                    <span class="nav-icon" aria-hidden="true">▦</span>
+                    <span>Today</span>
+                </button>
+                <button class="nav-item" type="button" data-view="upcoming">
+                    <span class="nav-icon" aria-hidden="true">▤</span>
+                    <span>Upcoming</span>
+                </button>
+            </nav>
+
+            <div class="projects-heading">My projects</div>
+            <div class="project-item"><span class="project-dot"></span>Personal</div>
+            <div class="sidebar-bottom">
+                <span class="sidebar-note">A little progress, every day.</span>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <span class="today-label" id="current-date"></span>
+                <button class="avatar-button" id="header-add" type="button" aria-label="Create a task">+</button>
+            </header>
+
+            <section class="task-area" aria-labelledby="view-title">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">YOUR SPACE</p>
+                        <h1 id="view-title">Inbox</h1>
+                    </div>
+                    <button class="new-task-link" id="inline-create" type="button">
+                        <span aria-hidden="true">+</span> Add task
+                    </button>
+                </div>
+                <div class="task-list" id="task-list" aria-live="polite"></div>
+            </section>
+            <footer class="main-footer">Make room for what matters.</footer>
+        </main>
+    </div>
+
+    <dialog class="task-dialog" id="task-dialog" aria-labelledby="dialog-title">
+        <form id="task-form">
+            <div class="dialog-heading">
+                <div>
+                    <p class="eyebrow">INBOX TASK</p>
+                    <h2 id="dialog-title">Create a task</h2>
+                </div>
+                <button class="close-button" id="close-dialog" type="button" aria-label="Close dialog">×</button>
+            </div>
+
+            <label class="field-label" for="task-title">Task title</label>
+            <input class="title-input" id="task-title" name="title" type="text" maxlength="160"
+                placeholder="What needs to get done?" required>
+
+            <div class="form-row">
+                <label class="field-group" for="task-date">
+                    <span class="field-label">Due date</span>
+                    <input id="task-date" name="dueDate" type="date">
+                </label>
+                <label class="field-group" for="task-priority">
+                    <span class="field-label">Priority</span>
+                    <select id="task-priority" name="priority">
+                        <option value="1">Priority 1 · High</option>
+                        <option value="2" selected>Priority 2 · Medium</option>
+                        <option value="3">Priority 3 · Low</option>
+                    </select>
+                </label>
+            </div>
+
+            <label class="field-group status-field" for="task-status">
+                <span class="field-label">Status</span>
+                <select id="task-status" name="status">
+                    <option>Pending</option>
+                    <option>Not completed</option>
+                    <option>Ongoing</option>
+                    <option>In progress</option>
+                    <option>Completed</option>
+                </select>
+            </label>
+
+            <p class="form-error" id="form-error" role="alert"></p>
+            <div class="dialog-actions">
+                <button class="cancel-button" id="cancel-dialog" type="button">Cancel</button>
+                <button class="submit-button" type="submit" id="submit-task">Done <span aria-hidden="true">↗</span></button>
+            </div>
+        </form>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>
